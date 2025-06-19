@@ -20,7 +20,7 @@ export const FindMovie: React.FC<Props> = ({ handleAddButton, movies }) => {
     e.preventDefault();
     setIsLoading(true);
 
-    getMovie(title)
+    getMovie(title.trim())
       .then(result => {
         if ('Response' in result && result.Response === 'False') {
           setMovie(null);
